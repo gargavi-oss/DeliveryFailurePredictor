@@ -3,7 +3,7 @@ import {
   } from "@react-google-maps/api";
   import { useEffect, useState } from "react";
   
-  const containerStyle = { width: "100%", height: "320px", borderRadius: "10px" };
+  const containerStyle = { width: "100%", height: "100%", minHeight: "400px", borderRadius: "0 0 10px 10px" };
   const center = { lat: 28.6139, lng: 77.2090 };
 
   const mapStyles = [
@@ -54,14 +54,14 @@ import {
   
     if (!isLoaded) {
       return (
-        <div className="card flex items-center justify-center h-[320px]">
+        <div className="card flex items-center justify-center h-full min-h-[400px]">
           <p className="text-xs text-[var(--text-muted)]">Loading map...</p>
         </div>
       );
     }
   
     return (
-      <div className="card overflow-hidden">
+      <div className="card overflow-hidden h-full flex flex-col min-h-[400px]">
   
         {/* HEADER */}
         <div className="px-4 py-2 flex justify-between items-center">
@@ -80,8 +80,9 @@ import {
           options={{
             disableDefaultUI: true,
             zoomControl: true,
-            styles: mapStyles // 👇 cleaner UI
+            styles: mapStyles
           }}
+          className="flex-1"
         >
           {/* ONLY ONE ROUTE */}
           {path.length > 1 && (

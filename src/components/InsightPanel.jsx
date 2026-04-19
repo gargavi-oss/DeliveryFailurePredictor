@@ -13,7 +13,7 @@ export default function InsightPanel({ stops, beforeRoute }) {
   }
 
   return (
-    <div className="card p-4 h-full flex flex-col">
+    <div className="card p-4 h-1/2 flex flex-col">
       <div className="flex items-center gap-2 mb-3">
         <span className="text-sm">🧠</span>
         <h3 className="text-xs font-semibold accent-text">AI Insights</h3>

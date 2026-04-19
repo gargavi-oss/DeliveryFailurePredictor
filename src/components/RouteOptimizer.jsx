@@ -39,10 +39,10 @@ export default function RouteOptimizer({ stops, setStops, setBeforeRoute }) {
   return (
     <div className="card p-4 space-y-3">
       <div className="flex items-center justify-between">
-        <h3 className="text-xs font-semibold" style={{ color: 'var(--text-primary)' }}>🗺️ Route Optimizer</h3>
+        <h3 className="text-xs font-semibold" style={{ color: 'var(--text-primary)' }}>🗺️ AI Route Optimizer</h3>
         <div className="flex items-center gap-2 text-[10px]" style={{ color: 'var(--text-muted)' }}>
           <span>{stops.length} stops</span>
-          <span className="font-semibold" style={{ color: 'var(--risk-high)' }}>{stops.filter(s => s.risk === "HIGH").length} high</span>
+          <span className="font-semibold" style={{ color: 'var(--risk-high)' }}>High Risk: {stops.filter(s => s.risk === "HIGH").length}</span>
         </div>
       </div>
 
@@ -55,7 +55,7 @@ export default function RouteOptimizer({ stops, setStops, setBeforeRoute }) {
           opacity: !stops.length ? 0.4 : 1,
         }}
       >
-        {optimized ? "✓ Optimized" : "⚡ Optimize Route"}
+        {optimized ? "✓ Route Optimized" : "⚡ Optimize Route"}
       </button>
 
       {before.length > 0 && (
@@ -74,8 +74,8 @@ export default function RouteOptimizer({ stops, setStops, setBeforeRoute }) {
               <p className="font-bold font-mono" style={{ color: 'var(--risk-low)' }}>~{Math.round(imp * 2)} min</p>
             </div>
             <div className="flex-1 px-2.5 py-2 rounded-lg" style={{ background: 'var(--bg-subtle)' }}>
-              <p className="text-[9px] uppercase" style={{ color: 'var(--text-muted)' }}>Improved</p>
-              <p className="font-bold font-mono accent-text">{imp}%</p>
+              <p className="text-[9px] uppercase" style={{ color: 'var(--text-muted)' }}>Route Efficiency</p>
+              <p className="font-bold font-mono" style={{ color: '#2563eb' }}>+{imp}%</p>
             </div>
           </div>
         </div>
