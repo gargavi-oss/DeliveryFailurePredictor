@@ -60,7 +60,7 @@ function AppContent() {
           {/* Right side */}
           <div className="flex items-center gap-2">
             <NavLink to="/" active={isActive("/")}>Dashboard</NavLink>
-            <NavLink to="/batch" active={isActive("/batch")}>Batch</NavLink>
+           
 
             {/* Divider */}
             <div className="w-px h-5 mx-2" style={{ background: 'var(--border)' }} />
@@ -99,7 +99,7 @@ function AppContent() {
 
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        <Route path="/batch" element={<BatchUpload />} />
+       
       </Routes>
     </div>
   );

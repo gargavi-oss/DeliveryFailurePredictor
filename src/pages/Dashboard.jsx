@@ -109,7 +109,10 @@ export default function Dashboard() {
 
           {result && <RiskCard result={result} />}
           {showSavings ? (
-                <SavingsAndRoads stops={stops} />
+                <SavingsAndRoads 
+                stops={stops} 
+                beforeRoute={beforeRoute}
+              />
               ) : (
                 showDriver && <SkeletonCard />
               )}
@@ -127,11 +130,9 @@ export default function Dashboard() {
 
             <div className="col-span-12 xl:col-span-4 space-y-4">
 
-              {showInsights ? (
-                <InsightPanel stops={stops} />
-              ) : (
-                demoLoaded && <SkeletonCard />
-              )}
+            {stops.length > 0 && (
+  <InsightPanel stops={stops} beforeRoute={beforeRoute} />
+)}
 
               {showDriver ? (
                 <DriverPerformance stops={stops} />

@@ -1,40 +1,53 @@
-export default function SavingsAndRoads({ stops }) {
+export default function SavingsAndRoads({ stops, beforeRoute }) {
   if (!stops || stops.length === 0) return null;
 
-  // Calculate Money Saved. For each high risk stop predicted, assume we save ~₹500 in failed delivery costs
-  const highRiskCount = stops.filter(s => s.risk === "HIGH").length;
-  const moneySaved = highRiskCount * 500 + stops.length * 50;
+  const hasBefore = beforeRoute && beforeRoute.length > 0;
 
-  // Mocking average road conditions based on traffic and risk
-  const avgTraffic = stops.reduce((acc, curr) => acc + (curr.traffic_index || 0.5), 0) / stops.length;
-  const isThin = avgTraffic > 0.7;
-  const roadCondition = isThin ? "Thin & Congested" : "Broad & Clear";
-  const expectedSpeed = isThin ? "15-25 km/h" : "40-55 km/h";
+  const riskWeight = {
+    HIGH: 500,
+    MEDIUM: 200,
+    LOW: 50
+  };
+
+  const beforeCost = hasBefore
+    ? beforeRoute.reduce((sum, s) => sum + (riskWeight[s.risk] || 0), 0)
+    : 0;
+
+  const afterCost = stops.reduce((sum, s) => sum + (riskWeight[s.risk] || 0), 0);
+
+  const moneySaved = hasBefore ? Math.max(beforeCost - afterCost, 0) : 0;
+
+  const avgTraffic =
+    stops.reduce((acc, curr) => acc + (curr.traffic_index || 0.5), 0) /
+    stops.length;
+
+  const isCongested = avgTraffic > 0.7;
+  const roadCondition = isCongested ? "Thin & Congested" : "Broad & Clear";
+  const expectedSpeed = isCongested ? "15-25 km/h" : "40-55 km/h";
 
   return (
     <div className="card p-4 space-y-3">
-      <div className="flex items-center gap-2">
-        <span className="text-[14px]">💰</span>
-        <h3 className="text-xs font-semibold" style={{ color: 'var(--text-primary)' }}>Economics & Route</h3>
-      </div>
-      
-      <div className="space-y-3 pt-1">
-        <div className="p-2 rounded flex justify-between items-center" style={{ background: 'rgba(34, 197, 94, 0.1)', border: '1px solid rgba(34, 197, 94, 0.2)' }}>
-          <p className="text-[10px] font-semibold" style={{ color: 'var(--text-primary)' }}>Money Saved</p>
-          <p className="font-mono font-bold text-lg" style={{ color: "var(--risk-low)" }}>₹{moneySaved}</p>
-        </div>
+      <h3 className="text-xs font-semibold">💰 Optimization Impact</h3>
 
-        <div className="grid grid-cols-2 gap-2">
-          <div className="p-2 rounded" style={{ background: 'var(--bg-subtle)', border: '1px solid var(--border)' }}>
-            <p className="text-[9px] uppercase mb-0.5" style={{ color: 'var(--text-muted)' }}>Road Condition</p>
-            <p className="text-[10px] font-semibold" style={{ color: "var(--text-primary)" }}>{roadCondition}</p>
-          </div>
-          <div className="p-2 rounded" style={{ background: 'var(--bg-subtle)', border: '1px solid var(--border)' }}>
-            <p className="text-[9px] uppercase mb-0.5" style={{ color: 'var(--text-muted)' }}>Max Speed</p>
-            <p className="font-mono font-bold" style={{ color: "var(--text-secondary)" }}>
-              {expectedSpeed}
-            </p>
-          </div>
+      <div className="p-2 flex justify-between">
+        <span>Money Saved</span>
+        <span className="font-bold text-green-500">₹{moneySaved}</span>
+      </div>
+
+      {hasBefore && (
+        <p className="text-xs text-gray-400">
+          Cost reduced from ₹{beforeCost} → ₹{afterCost}
+        </p>
+      )}
+
+      <div className="grid grid-cols-2 gap-2 text-xs">
+        <div>
+          <p>Road</p>
+          <p>{roadCondition}</p>
+        </div>
+        <div>
+          <p>Speed</p>
+          <p>{expectedSpeed}</p>
         </div>
       </div>
     </div>
