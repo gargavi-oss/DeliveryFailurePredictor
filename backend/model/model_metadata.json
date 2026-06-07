@@ -1,0 +1,41 @@
+{
+  "model_type": "XGBClassifier",
+  "n_estimators": 300,
+  "max_depth": 6,
+  "features_count": 61,
+  "training_samples": 20000,
+  "test_samples": 5000,
+  "accuracy": 0.96,
+  "precision": 0.914572864321608,
+  "recall": 0.9402214022140222,
+  "f1_score": 0.9272197962154294,
+  "auc_roc": 0.9929546110275917,
+  "cv_mean_f1": 0.9298393116527948,
+  "failure_rate": 0.27096,
+  "num_cols": [
+    "distance_km",
+    "order_volume",
+    "delivery_cost",
+    "traffic_index",
+    "hub_dwell_minutes",
+    "driver_delay_rate",
+    "vehicle_reliability",
+    "hour",
+    "day_of_week",
+    "is_weekend",
+    "sla_time_hours",
+    "order_density",
+    "cost_intensity",
+    "traffic_pressure",
+    "reliability_risk",
+    "distance_cost_interaction"
+  ],
+  "cat_cols": [
+    "delivery_partner",
+    "package_type",
+    "vehicle_type",
+    "delivery_mode",
+    "region",
+    "weather_condition"
+  ]
+}

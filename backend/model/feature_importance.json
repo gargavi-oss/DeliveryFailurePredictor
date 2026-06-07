@@ -1,0 +1,246 @@
+[
+  {
+    "feature": "traffic_index",
+    "importance": 0.13736487925052643
+  },
+  {
+    "feature": "weather_condition_stormy",
+    "importance": 0.09539555013179779
+  },
+  {
+    "feature": "weather_condition_rainy",
+    "importance": 0.060631163418293
+  },
+  {
+    "feature": "driver_delay_rate",
+    "importance": 0.05574098601937294
+  },
+  {
+    "feature": "weather_condition_foggy",
+    "importance": 0.049502454698085785
+  },
+  {
+    "feature": "weather_condition_hot",
+    "importance": 0.04030546918511391
+  },
+  {
+    "feature": "weather_condition_clear",
+    "importance": 0.03701433911919594
+  },
+  {
+    "feature": "delivery_mode_standard",
+    "importance": 0.03326638787984848
+  },
+  {
+    "feature": "weather_condition_unknown",
+    "importance": 0.03218848630785942
+  },
+  {
+    "feature": "reliability_risk",
+    "importance": 0.032180506736040115
+  },
+  {
+    "feature": "traffic_pressure",
+    "importance": 0.03059535287320614
+  },
+  {
+    "feature": "vehicle_reliability",
+    "importance": 0.027406472712755203
+  },
+  {
+    "feature": "distance_km",
+    "importance": 0.02057330124080181
+  },
+  {
+    "feature": "sla_time_hours",
+    "importance": 0.018916187807917595
+  },
+  {
+    "feature": "hub_dwell_minutes",
+    "importance": 0.017769353464245796
+  },
+  {
+    "feature": "weather_condition_cold",
+    "importance": 0.016716500744223595
+  },
+  {
+    "feature": "distance_cost_interaction",
+    "importance": 0.0167066752910614
+  },
+  {
+    "feature": "vehicle_type_unknown",
+    "importance": 0.01450621709227562
+  },
+  {
+    "feature": "order_density",
+    "importance": 0.007850498892366886
+  },
+  {
+    "feature": "delivery_partner_ecom express",
+    "importance": 0.00777831906452775
+  },
+  {
+    "feature": "delivery_cost",
+    "importance": 0.007719005458056927
+  },
+  {
+    "feature": "package_type_documents",
+    "importance": 0.00757788447663188
+  },
+  {
+    "feature": "package_type_unknown",
+    "importance": 0.007548977620899677
+  },
+  {
+    "feature": "delivery_mode_unknown",
+    "importance": 0.007478097919374704
+  },
+  {
+    "feature": "region_east",
+    "importance": 0.007303563412278891
+  },
+  {
+    "feature": "vehicle_type_van",
+    "importance": 0.007094748318195343
+  },
+  {
+    "feature": "delivery_partner_fedex",
+    "importance": 0.007011369802057743
+  },
+  {
+    "feature": "delivery_partner_shadowfax",
+    "importance": 0.006782242096960545
+  },
+  {
+    "feature": "delivery_mode_express",
+    "importance": 0.006770304404199123
+  },
+  {
+    "feature": "package_type_cosmetics",
+    "importance": 0.006496267393231392
+  },
+  {
+    "feature": "package_type_electronics",
+    "importance": 0.006437966600060463
+  },
+  {
+    "feature": "package_type_groceries",
+    "importance": 0.00643564248457551
+  },
+  {
+    "feature": "region_central",
+    "importance": 0.0063728769309818745
+  },
+  {
+    "feature": "delivery_partner_delhivery",
+    "importance": 0.006319450214505196
+  },
+  {
+    "feature": "cost_intensity",
+    "importance": 0.006265709176659584
+  },
+  {
+    "feature": "region_unknown",
+    "importance": 0.006246778182685375
+  },
+  {
+    "feature": "vehicle_type_scooter",
+    "importance": 0.006184753030538559
+  },
+  {
+    "feature": "delivery_partner_ekart",
+    "importance": 0.0061845723539590836
+  },
+  {
+    "feature": "delivery_partner_xpressbees",
+    "importance": 0.006137046031653881
+  },
+  {
+    "feature": "vehicle_type_ev bike",
+    "importance": 0.0060662818141281605
+  },
+  {
+    "feature": "region_north",
+    "importance": 0.006046665832400322
+  },
+  {
+    "feature": "delivery_partner_dhl",
+    "importance": 0.006014498881995678
+  },
+  {
+    "feature": "region_west",
+    "importance": 0.006000184454023838
+  },
+  {
+    "feature": "order_volume",
+    "importance": 0.005919222254306078
+  },
+  {
+    "feature": "package_type_automobile parts",
+    "importance": 0.005909555125981569
+  },
+  {
+    "feature": "package_type_furniture",
+    "importance": 0.005875075701624155
+  },
+  {
+    "feature": "delivery_partner_blue dart",
+    "importance": 0.005806821398437023
+  },
+  {
+    "feature": "vehicle_type_ev van",
+    "importance": 0.005618324503302574
+  },
+  {
+    "feature": "package_type_fragile items",
+    "importance": 0.005602041259407997
+  },
+  {
+    "feature": "vehicle_type_bike",
+    "importance": 0.00554350670427084
+  },
+  {
+    "feature": "hour",
+    "importance": 0.005517392419278622
+  },
+  {
+    "feature": "delivery_mode_two day",
+    "importance": 0.005408439319580793
+  },
+  {
+    "feature": "day_of_week",
+    "importance": 0.005390701349824667
+  },
+  {
+    "feature": "vehicle_type_truck",
+    "importance": 0.0053489599376916885
+  },
+  {
+    "feature": "delivery_partner_unknown",
+    "importance": 0.005296759307384491
+  },
+  {
+    "feature": "is_weekend",
+    "importance": 0.00512567488476634
+  },
+  {
+    "feature": "delivery_mode_same day",
+    "importance": 0.004785401746630669
+  },
+  {
+    "feature": "package_type_pharmacy",
+    "importance": 0.004674093332141638
+  },
+  {
+    "feature": "region_south",
+    "importance": 0.004631659481674433
+  },
+  {
+    "feature": "package_type_clothing",
+    "importance": 0.004424920305609703
+  },
+  {
+    "feature": "delivery_partner_amazon logistics",
+    "importance": 0.004217461217194796
+  }
+]
